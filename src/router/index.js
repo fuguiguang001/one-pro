@@ -8,7 +8,15 @@ const routes = [
     path: '/login', name: 'login', component: () => import('@/views/login/index')
   },
   {
-    path: '/home', name: 'home', component: () => import('@/views/home/index')
+    path: '/home', 
+    name: 'home', 
+    component: () => import('@/views/home/index'),
+    redirect: '/wecome', //页面重定向
+    children: [
+      {
+        path: '/wecome', name: 'wecome', component: () => import('@/views/wecome/index')
+      }
+    ]
   }
 ]
 
